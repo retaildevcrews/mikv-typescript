@@ -48,7 +48,7 @@ import restify = require("restify");
                 apis: [`${__dirname}/models/*.js`, `${__dirname}/controllers/*.js`],
                 definition: {
                     info: {
-                        title: "Helium", // Title (required)
+                        title: "mikv", // Title (required)
                         version: {version}, // Version (required)
                     },
                     openapi: "3.0.2", // Specification (optional, defaults to swagger: "2.0")

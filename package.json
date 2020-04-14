@@ -1,7 +1,7 @@
 {
-  "name": "helium",
-  "version": "0.0.7",
-  "description": "Azure App Service reference application",
+  "name": "mikv",
+  "version": "1.0.0",
+  "description": "Managed Identity - Key Vault WebAPI Sample",
   "main": "dist/server.js",
   "directories": {
     "test": "tests"
