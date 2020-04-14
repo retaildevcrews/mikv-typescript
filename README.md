@@ -44,6 +44,12 @@ This sample is a Node.JS REST WebAPI application designed to "fork and code" wit
 * JQ ([download](https://stedolan.github.io/jq/download/))
 * Visual Studio Code (optional) ([download](https://code.visualstudio.com/download))
 
+## Package Status
+
+### Dependency Vulnerability
+
+Currently, helium-typescript has a dependency on inversify-restify-utils which has a [vulnerability](https://www.npmjs.com/advisories/1171) (Regular Expression Denial of Service) due to a dependency on an older version of restify. This is being tracked in the appropriate github repo with [this issue](https://github.com/inversify/InversifyJS/issues/1158).
+
 ## Setup
 
 * Fork this repo and clone to your local machine
@@ -174,6 +180,8 @@ curl http://localhost:4120/api/secret
 
 # make sure you are in the root of the repo
 # docker-dev builds an alpine image with Azure CLI installed in the container
+# note: you may see output like the following, this is expected and safe to ignore
+# npm WARN gulp-debug@4.0.0 requires a peer of gulp@>=4 but none is installed. You must install peer dependencies yourself.
 docker build -t helium-dev -f Dockerfile-Dev .
 
 # run the container

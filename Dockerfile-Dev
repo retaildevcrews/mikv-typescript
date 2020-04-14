@@ -35,7 +35,7 @@ RUN npm install
 
 FROM dependencies AS test
 COPY . .
-RUN npm run lint && npm run build && npm test
+RUN npm run lint && npm run build
 
 FROM helium-dev-base AS release
 COPY --from=dependencies /app/prod_node_modules ./node_modules
