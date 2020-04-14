@@ -22,7 +22,7 @@ page_type: sample
 
 # Build a Node.JS application using App Service, Managed Identity and Key Vault
 
-This sample is an Node.JS REST WebAPI application designed to "fork and code" with the following features:
+This sample is a Node.JS REST WebAPI application designed to "fork and code" with the following features:
 
 * Securely build, deploy and run an App Service (Web App for Containers) application
 * Use Managed Identity to securely access resources
