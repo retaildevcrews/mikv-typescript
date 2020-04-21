@@ -24,9 +24,9 @@ FROM node:lts-alpine AS release
 EXPOSE 4120
 WORKDIR /app
 
-### run as helium user
-RUN adduser -S helium
-USER helium
+### run as mikv user
+RUN adduser -S mikv
+USER mikv
 
 COPY --from=base /app/package.json .
 COPY --from=base /app/prod_node_modules ./node_modules

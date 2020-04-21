@@ -48,7 +48,7 @@ This sample is a Node.JS REST WebAPI application designed to "fork and code" wit
 
 ### Dependency Vulnerability
 
-Currently, helium-typescript has a dependency on inversify-restify-utils which has a [vulnerability](https://www.npmjs.com/advisories/1171) (Regular Expression Denial of Service) due to a dependency on an older version of restify. This is being tracked in the appropriate github repo with [this issue](https://github.com/inversify/InversifyJS/issues/1158).
+Currently, this project has a dependency on inversify-restify-utils which has a [vulnerability](https://www.npmjs.com/advisories/1171) (Regular Expression Denial of Service) due to a dependency on an older version of restify. This is being tracked in the appropriate github repo with [this issue](https://github.com/inversify/InversifyJS/issues/1158).
 
 ## Setup
 
@@ -182,7 +182,7 @@ curl http://localhost:4120/api/secret
 # docker-dev builds an alpine image with Azure CLI installed in the container
 # note: you may see output like the following, this is expected and safe to ignore
 # npm WARN gulp-debug@4.0.0 requires a peer of gulp@>=4 but none is installed. You must install peer dependencies yourself.
-docker build -t helium-dev -f Dockerfile-Dev .
+docker build -t mikv-dev -f Dockerfile-Dev .
 
 # run the container
 # mount your ~/.azure directory to container root/.azure directory
@@ -192,7 +192,7 @@ docker build -t helium-dev -f Dockerfile-Dev .
 docker run -d -p 4120:4120 --name mikv-dev -v ~/.azure:/root/.azure mikv-dev "npm" "start" "--"  "--keyvault-name" "${mikv_Name}" "--auth-type" "CLI"
 
 # option using environment variables
-docker run -d -p 4120:4120 -e KEYVAULT_NAME=$mikv_Name -e AUTH_TYPE=CLI --name helium-dev -v ~/.azure:/root/.azure mikv-dev "npm" "start"
+docker run -d -p 4120:4120 -e KEYVAULT_NAME=$mikv_Name -e AUTH_TYPE=CLI --name mikv-dev -v ~/.azure:/root/.azure mikv-dev "npm" "start"
 
 # check the logs
 # re-run until the application started message appears
