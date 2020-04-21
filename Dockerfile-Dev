@@ -1,5 +1,5 @@
 # ---- Base Node ----
-FROM node:current-alpine AS helium-dev-base
+FROM node:lts AS base
 
 ### Optional: Set Proxy Variables
 # ENV http_proxy {value}
@@ -8,6 +8,18 @@ FROM node:current-alpine AS helium-dev-base
 # ENV HTTPS_PROXY {value}
 # ENV no_proxy {value}
 # ENV NO_PROXY {value}
+
+WORKDIR /app
+COPY . .
+
+RUN npm set progress=false && npm config set depth 0
+RUN npm install --production
+RUN cp -R node_modules prod_node_modules
+RUN npm install
+RUN npm run lint && npm run build
+
+# ---- Release ----
+FROM node:lts-alpine AS release
 
 ### install azure cli
 RUN \
@@ -18,25 +30,9 @@ RUN \
 
 RUN mkdir -p /root/.azure
 
-WORKDIR /app
 EXPOSE 4120
-COPY package.json .
- 
-#
-# ---- Dependencies ----
-FROM helium-dev-base AS dependencies
-RUN npm set progress=false && npm config set depth 0
-RUN apk add --no-cache --virtual .gyp \
-        make \
-        python \
-        && npm install --production 
-RUN cp -R node_modules prod_node_modules
-RUN npm install
+WORKDIR /app
 
-FROM dependencies AS test
-COPY . .
-RUN npm run lint && npm run build
-
-FROM helium-dev-base AS release
-COPY --from=dependencies /app/prod_node_modules ./node_modules
-COPY --from=test /app/dist ./dist
+COPY --from=base /app/package.json .
+COPY --from=base /app/prod_node_modules ./node_modules
+COPY --from=base /app/dist ./dist

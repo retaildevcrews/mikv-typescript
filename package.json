@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Microsoft/helium.git"
+    "url": "git+https://github.com/retaildevcrews/mikv-typescript.git"
   },
   "author": "aka",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Microsoft/helium/issues"
+    "url": "https://github.com/retaildevcrews/mikv-typescript/issues"
   },
-  "homepage": "https://github.com/Microsoft/helium#readme",
+  "homepage": "https://github.com/retaildevcrews/mikv-typescript#readme",
   "dependencies": {
     "@azure/identity": "^1.0.2",
     "@azure/keyvault-secrets": "^4.0.2",
@@ -43,14 +43,14 @@
   "devDependencies": {
     "@types/body-parser": "^1.19.0",
     "@types/bunyan": "^1.8.6",
-    "@types/node": "^13.9.1",
+    "@types/node": "^13.13.1",
     "@types/restify": "^8.4.2",
-    "@typescript-eslint/eslint-plugin": "^2.24.0",
-    "@typescript-eslint/parser": "^2.24.0",
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
     "bufferutil": "^4.0.1",
     "eslint": "^6",
-    "source-map-support": "^0.5.16",
-    "ts-node": "^8.7.0",
+    "source-map-support": "^0.5.17",
+    "ts-node": "^8.9.0",
     "typescript": "^3.8.2",
     "utf-8-validate": "^5.0.2"
   }

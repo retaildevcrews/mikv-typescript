@@ -1,5 +1,5 @@
 export const sections = [
-    { "header": "Helium", "content": "A web app" },
+    { "header": "MIKV", "content": "A web app using Managed Identity and Key Vault" },
     { "header": "Usage", "content": "npm start -- [options]" },
     {
         "header": "Options",
