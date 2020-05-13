@@ -1,6 +1,6 @@
 {
   "name": "mikv",
-  "version": "1.0.0",
+  "version": "0.0.8",
   "description": "Managed Identity - Key Vault WebAPI Sample",
   "main": "dist/server.js",
   "directories": {
