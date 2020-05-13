@@ -19,8 +19,9 @@ description: "A sample Node.JS REST WebAPI for bootstrapping your next App Servi
 urlFragment: app-service-managed-identity-key-vault-nodejs-typescript
 page_type: sample
 ---
+# Managed Identity and Key Vault with Node.js and Restify
 
-# Build a Node.JS application using App Service, Managed Identity and Key Vault
+> Build a Node.JS and Restify Web API application using App Service, Managed Identity and Key Vault
 
 This sample is a Node.JS REST WebAPI application designed to "fork and code" with the following features:
 
