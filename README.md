@@ -51,6 +51,8 @@ This sample is a Node.JS REST WebAPI application designed to "fork and code" wit
 
 Currently, this project has a dependency on inversify-restify-utils which has a [vulnerability](https://www.npmjs.com/advisories/1171) (Regular Expression Denial of Service) due to a dependency on an older version of restify. This is being tracked in the appropriate github repo with [this issue](https://github.com/inversify/InversifyJS/issues/1158).
 
+See [helium-typescript](https://github.com/retaildevcrews/helium-typescript/blob/master/README.md#dependency-workaround) for a documented work around.
+
 ## Setup
 
 * Fork this repo and clone to your local machine
