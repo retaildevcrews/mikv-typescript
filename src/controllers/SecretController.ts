@@ -1,6 +1,6 @@
 import { inject, injectable } from "inversify";
 import { Controller, Get, interfaces } from "inversify-restify-utils";
-import { Request } from "restify";
+import { Request, Response } from "restify";
 import * as HttpStatus from "http-status-codes";
 import { LogService } from "../services/LogService";
 import { ConfigValues } from "../config/ConfigValues";
@@ -29,7 +29,7 @@ export class SecretController implements interfaces.Controller {
    *         description: Returns text/plain exception message
    */
   @Get("/")
-  public async getSecret(req: Request, res) {
+  public async getSecret(req: Request, res: Response): Promise<any>{
     res.setHeader("Content-Type", "text/plain");
 
     let result: string;

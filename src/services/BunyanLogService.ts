@@ -51,24 +51,24 @@ export class BunyanLogService implements LogService {
     this.logger[logLevel](traceObj, message);
   }
 
-  public setLogLevel(logLevel) {
-    logLevel = (!logLevel) ? "info" : logLevel;
-    this.logger.level(logLevel) ;
+  public setLogLevel(newlogLevel: bunyan.LogLevel): void{
+    const logLevel = (!newlogLevel) ? "info" : newlogLevel;
+    this.logger.level(logLevel);
   }
 
-  public trace(message: string, id?: string) {
+  public trace(message: string, id?: string): void {
     this.logMessage("trace", message, id);
   }
 
-  public info(message: string, id?: string) {
+  public info(message: string, id?: string): void {
     this.logMessage("info", message, id);
   }
 
-  public warn(message: string, id?: string) {
+  public warn(message: string, id?: string): void {
     this.logMessage("warn", message, id);
   }
 
-  public error(error: Error, errorMessage: string, id?: string) {
+  public error(error: Error, errorMessage: string, id?: string): void {
     const traceObj = { err: error, correlationID: this.uniqueServerId };
 
     if (id) {

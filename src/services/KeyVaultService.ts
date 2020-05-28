@@ -24,7 +24,7 @@ export class KeyVaultService {
     }
 
     // connect to the Key Vault client
-    public async connect() {
+    public async connect(): Promise<void>{
         try {
             // use specified authentication type (either MSI or CLI)
             const creds: any = this.authType === "MSI" ?

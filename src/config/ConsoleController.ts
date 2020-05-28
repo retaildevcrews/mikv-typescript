@@ -10,7 +10,7 @@ export class ConsoleController {
     constructor(private logService: LogService) { }
 
     // capture cli arguments and fetch application configuration
-    async run() {
+    async run() : Promise<ConfigValues>{
         const { validationMessages, values } = this.parseArguments();
 
         // handle --help
@@ -45,7 +45,7 @@ export class ConsoleController {
         return config;
     }
 
-    public parseArguments() {
+    public parseArguments(): {validationMessages: any[], values: any}{
         const options: OptionDefinition[] = sections.find(s => s.header == "Options").optionList;
         let args;
 
@@ -88,12 +88,12 @@ export class ConsoleController {
         return { validationMessages: validationMessages, values: values };
     }
 
-    showHelp(message?: string) {
+    showHelp(message?: string): void{
         if (message) console.log(message);
         console.log(commandLineUsage(sections));
     }
 
-    dryRun(config, values) {
+    dryRun(config: ConfigValues, values: any[]): void{
         console.log(`
             Version                       ${version}
             Keyvault                      ${values["keyvault-name"]}
@@ -124,7 +124,7 @@ export class ConsoleController {
 export interface OptionDefinition {
     name: string;
     alias?: string;
-    type?: Function;
+    type?: any;
     description?: string;
     validationPattern?: RegExp;
     required?: boolean;
