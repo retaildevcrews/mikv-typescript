@@ -175,7 +175,8 @@ az keyvault set-policy -n $mikv_Name --secret-permissions get list --key-permiss
 
 # install modules in package.json file
 # note: you may see output like the following, this is expected and safe to ignore
-# npm WARN gulp-debug@4.0.0 requires a peer of gulp@>=4 but none is installed. You must install peer dependencies yourself.
+# npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules/fsevents):
+# npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
 
 npm install
 
@@ -256,6 +257,10 @@ az acr login -n $mikv_Name
 
 # Build the container with az acr build
 ### Make sure you are in the root folder of the repo
+
+# note: you may see output like the following, this is expected and safe to ignore
+# npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules/fsevents):
+# npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
 
 az acr build -r $mikv_Name -t $mikv_Name.azurecr.io/mikv-typescript .
 
