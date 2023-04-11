@@ -24,8 +24,8 @@
   },
   "homepage": "https://github.com/retaildevcrews/mikv-typescript#readme",
   "dependencies": {
-    "@azure/identity": "^1.0.3",
-    "@azure/keyvault-secrets": "^4.0.2",
+    "@azure/identity": "^1.5.2",
+    "@azure/keyvault-secrets": "^4.7.0",
     "@azure/ms-rest-nodeauth": "^3.0.4",
     "body-parser": "^1.19.0",
     "bunyan": "^1.8.12",
